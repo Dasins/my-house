@@ -11,10 +11,12 @@
  */
 public class Picture
 {
+    private Circle camp;
     private Square wall;
     private Square window;
     private Triangle roof;
     private Circle sun;
+    
 
     /**
      * Constructor for objects of class Picture
@@ -29,6 +31,13 @@ public class Picture
      */
     public void draw()
     {
+        camp = new Circle();
+        camp.changeColor("green");
+        camp.moveHorizontal(-600);
+        camp.moveVertical(150);
+        camp.changeSize(1200);
+        camp.makeVisible();
+        
         wall = new Square();
         wall.moveHorizontal(-140);
         wall.moveVertical(20);
@@ -53,9 +62,11 @@ public class Picture
         sun.moveHorizontal(100);
         sun.moveVertical(-40);
         sun.changeSize(80);
+        sun.slowMoveVertical (120);
         sun.makeVisible();
     }
 
+  
     /**
      * Change this picture to black/white display
      */
